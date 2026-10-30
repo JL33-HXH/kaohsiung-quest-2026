@@ -121,6 +121,8 @@ d:'飯店不主動提供一次性備品。',objs:[['必帶','牙膏、牙刷（�
 d:'訂房是 Room Only，不含早餐。',objs:[['選項 A','飯店 3F 港都茶樓 06:30–10:00，現場加購大人 650+10%、兒童 325+10% '+U],['選項 B','大溝頂虱目魚米粉湯（05:30–13:30，賣完就收）'],['選項 C','姊妹老五烘蛋漢堡（06:00 開）'],['09:00','逛駁二（市博會、鋼雕藝術節；市集時間 '+U+'）'],['10:30','米糕城早午餐（大仁路）']],costs:[['飯店早餐若加購 '+U,'約 NT$1,788']]},
 {id:'pool',cat:'GIGS',t:'打電話問泳池',en:'CALL HOTEL',loc:'翰品酒店高雄',lv:'出發前',
 d:'觀光署列有泳池，但官網和訂房網都沒提到。泳池開放時間與泳帽規定都不清楚。',objs:[['出發前','打給飯店問有沒有泳池、時段、泳帽規定'],['順便','問 Tesla 充電、夜燈 DIY 時段、健身房樓層']],costs:[]},
+{id:'cat',cat:'GIGS',t:'貓咪寄放',en:'CAT DROP-OFF',loc:'朋友家',lv:'10/31–11/1',
+d:'這趟貓咪不同行，寄放在朋友家。',objs:[['10/31 出門前','整理貓咪物品：貓砂、貓用碗、貓飼料、貓罐頭、貓玩具、貓背帶、外出籠'],['10/31 出門前','留給朋友：餵食份量與時間、貓砂清理方式'],['10/31 出門前','留給朋友：獸醫／急診聯絡資訊'],['10/31 早上','出發前送貓到朋友家'],['11/1 晚上','回到台北後接貓']],costs:[]},
 {id:'budget',cat:'GIGS',t:'預算',en:'EDDIES',loc:'ALL',lv:'TOTAL',
 d:'已知花費；餐飲、充電與其他尚未估。實際花費待填。',objs:[],costs:[['故宮南院停車','NT$60'],['奇美博物館門票（全票 200、7–22 歲 150）','依人數'],['飯店早餐（若加購）'+U,'約 NT$1,788'],['餐飲、充電、其他','待填']]}];
 const S=JSON.parse(localStorage.getItem('khq_pub')||'{}');let cur=S._cur||'main';
@@ -176,17 +178,17 @@ document.getElementById('inset').innerHTML=`<div class="sec" style="margin-top:0
 function mk(id){const p=pt(id);S._mk=id;save();document.getElementById('mcard').innerHTML=`<span class="tag ${p.ty=='main'?'':p.ty=='gig'?'y':''}">${p.ty=='main'?'MAIN JOB':p.ty=='side'?'SIDE JOB':'GIG'}</span><div class="sub" style="margin-top:8px">${p.en}</div><h2>${p.n}</h2><p><b style="color:var(--yl)">TIME</b>　${p.tm}</p><p><b style="color:var(--cy)">ROUTE</b>　${p.tr}</p><a class="nav" target="_blank" rel="noopener" href="${G+encodeURIComponent(p.q)}">NAVIGATE ▸</a>`}
 /* ---- inventory ---- */
 const R={L:'#FCEE0A',E:'#c77dff',R:'#5EF6FF',C:'#9aa4a8'};
-const I=[
+const I=[['貓砂','🪣','貓咪寄放','C',0,1],['貓用碗','🥣','貓咪寄放','C',0,1],['貓飼料','🐟','貓咪寄放','R',0,1],['貓罐頭','🥫','貓咪寄放','R',0,1],['貓玩具','🧶','貓咪寄放','C',0,1],['貓背帶','🦺','貓咪寄放','C',0,1],['外出籠','🧳','貓咪寄放','L',0,1],
 ['太陽眼鏡','🕶️','服裝','L'],['拖鞋','🩴','服裝','C'],['換洗衣物','👕','服裝','L'],['泳具','🩱','服裝','C','泳池'+U],
 ['防曬用品','🧴','盥洗','L'],['毛巾','🧺','盥洗','C'],['牙膏、牙刷','🪥','盥洗','L','櫃台每組 NT$30'],['洗面乳','🫧','盥洗','C'],['刮鬍刀','🪒','盥洗','C'],
 ['藥品','💊','醫療','R'],['防蚊液','🦟','醫療','R'],
 ['咖啡用具','☕','食物','R'],['烈酒','🥃','食物','R'],['歐洲酒品','🍷','食物','R'],['調味料','🧂','食物','C'],['紙巾','🧻','食物','C'],['多餘食材','🥬','食物','C'],['零食','🍪','食物','C'],
 ['SWITCH','🎮','電子','E'],['相機','📷','電子','E'],['筆電','💻','電子','E'],['電子書','📖','電子','E'],['充電器','🔌','電子','E'],['小音箱','🔊','電子','E'],['電動車充電線／轉接頭','⚡','電子','L']];
-const CAT=['ALL','服裝','盥洗','醫療','食物','電子'];let fc='ALL';
+const CAT=['ALL','服裝','盥洗','醫療','食物','電子','貓咪寄放'];let fc='ALL';
 const K=[['HOTEL','翰品酒店高雄 · Room Only'],['CHECK-IN / OUT','10/31 16:00 ／ 11/1 12:00'],['PARKING','對面市立室內停車場 · 住客免費'],['奇美門票','全票 NT$200 · 7–22 歲 NT$150（現場）'],['好港節','免費入場 · 10/31–11/1 15:00–21:00']];
 function inv(){document.getElementById('ftab').innerHTML=CAT.map(c=>`<span class="${c==fc?'act':''}" onclick="fc='${c}';inv()">${c}</span>`).join('');
-document.getElementById('grid').innerHTML=I.map((it,i)=>it[2]==fc||fc=='ALL'?`<div class="it ${S['inv'+i]?'on':''}" style="--rc:${R[it[3]]}" onclick="S['inv'+${i}]=!S['inv'+${i}];save();inv()"><span class="eq">${S['inv'+i]?'■ EQUIPPED':'□ EQUIP'}</span><span class="em">${it[1]}</span><div class="nm">${it[0]}</div>${it[4]?`<div class="nt">${it[4]}</div>`:''}<span class="rr"></span></div>`:'').join('');
-const n=I.filter((x,i)=>S['inv'+i]).length;document.getElementById('capn').textContent=`CAPACITY ${n} / ${I.length}`;document.getElementById('capb').style.width=n/I.length*100+'%';
+document.getElementById('grid').innerHTML=I.map((it,i)=>it[2]==fc||(fc=='ALL'&&!it[5])?`<div class="it ${S['inv'+i]?'on':''}" style="--rc:${R[it[3]]}" onclick="S['inv'+${i}]=!S['inv'+${i}];save();inv()"><span class="eq">${S['inv'+i]?'■ EQUIPPED':'□ EQUIP'}</span><span class="em">${it[1]}</span><div class="nm">${it[0]}</div>${it[4]?`<div class="nt">${it[4]}</div>`:''}<span class="rr"></span></div>`:'').join('');
+const T=I.map((x,i)=>[x,i]).filter(a=>!a[0][5]),C=I.map((x,i)=>[x,i]).filter(a=>a[0][5]);const n=T.filter(a=>S['inv'+a[1]]).length,m=C.filter(a=>S['inv'+a[1]]).length;document.getElementById('capn').textContent=`CAPACITY ${n} / ${T.length}　//　🐱 貓咪寄放 ${m} / ${C.length}`;document.getElementById('capb').style.width=n/T.length*100+'%';
 document.getElementById('key').innerHTML=K.map(k=>`<div class="ki"><small>◆ ${k[0]}</small><div>${k[1]}</div></div>`).join('')}
 drawMap();mk(S._mk||'kpmc');inv();if(S._v&&S._v!='journal')view(S._v);
 const hv=location.hash.slice(1);if(['map','journal','inv'].includes(hv))view(hv);
