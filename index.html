@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JOURNAL // KAOHSIUNG 10.31–11.01</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Orbitron:wght@600;800&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#FF5C57;--cy:#5EF6FF;--yl:#FCEE0A;--bg:#0b0b0e;--dim:#7a3533}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--red);font-family:Rajdhani,"Noto Sans TC",sans-serif;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px);mix-blend-mode:overlay}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(ellipse at 70% 20%,rgba(255,92,87,.08),transparent 60%),radial-gradient(ellipse at 10% 90%,rgba(94,246,255,.05),transparent 50%)}
+header{display:flex;align-items:flex-end;gap:24px;padding:20px 32px 12px;border-bottom:1px solid var(--dim)}
+.logo{font-family:Orbitron;font-weight:800;font-size:30px;letter-spacing:4px;position:relative}
+.tabs{display:flex;gap:18px;font-weight:700;letter-spacing:2px;font-size:14px;color:var(--dim)}
+.tabs b{color:var(--red);border-bottom:2px solid var(--red)}
+.meta{margin-left:auto;font-size:13px;color:var(--cy);letter-spacing:2px;text-align:right}
+.glitch{animation:fl 4s infinite}
+.glitch:before,.glitch:after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden}
+.glitch:before{color:var(--cy);clip-path:inset(0 0 60% 0);animation:g1 3s infinite steps(1)}
+.glitch:after{color:var(--yl);clip-path:inset(60% 0 0 0);animation:g2 2.5s infinite steps(1)}
+@keyframes g1{0%,92%{transform:none;opacity:0}93%{transform:translate(-3px,-1px);opacity:.8}96%{transform:translate(2px,1px);opacity:.8}}
+@keyframes g2{0%,88%{transform:none;opacity:0}89%{transform:translate(3px,1px);opacity:.7}94%{transform:translate(-2px);opacity:.7}}
+@keyframes fl{0%,97%,100%{opacity:1}98%{opacity:.4}}
+main{display:grid;grid-template-columns:340px 1fr;gap:24px;padding:22px 32px 40px}
+.list h3{font-size:13px;letter-spacing:3px;color:var(--cy);margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.list h3:after{content:"";flex:1;height:1px;background:var(--dim)}
+.q{display:flex;gap:10px;align-items:center;padding:9px 12px;margin-bottom:6px;cursor:pointer;border:1px solid transparent;font-weight:700;font-size:16px;clip-path:polygon(0 0,100% 0,100% 70%,94% 100%,0 100%)}
+.q:hover{background:rgba(255,92,87,.08)}
+.q.on{background:rgba(255,92,87,.16);border-color:var(--red);color:#fff}
+.q .ic{width:10px;height:10px;transform:rotate(45deg);border:1px solid var(--red);flex:none}
+.q.trk .ic{background:var(--yl);border-color:var(--yl)}
+.q small{margin-left:auto;font-size:11px;color:var(--dim);letter-spacing:1px}
+.panel{border:1px solid var(--red);padding:26px 30px;position:relative;background:linear-gradient(135deg,rgba(255,92,87,.06),rgba(0,0,0,.2));clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px))}
+.panel:before{content:"";position:absolute;top:0;left:0;width:80px;height:3px;background:var(--red)}
+.tag{display:inline-block;font-size:12px;letter-spacing:2px;color:#000;background:var(--cy);padding:3px 10px;margin-right:6px;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.tag.y{background:var(--yl)}
+h1{font-family:Orbitron,"Noto Sans TC";font-size:28px;margin:14px 0 4px;color:#fff;letter-spacing:2px;position:relative;text-shadow:0 0 12px rgba(255,92,87,.6)}
+h1 .glitch{position:relative;display:inline-block}
+.sub{color:var(--cy);font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.desc{font-family:"Noto Sans TC";font-size:15px;line-height:1.75;color:#f0c9c7;margin-bottom:18px}
+.sec{font-size:13px;letter-spacing:3px;color:var(--red);margin:18px 0 8px;border-bottom:1px solid var(--dim);padding-bottom:4px}
+.obj{display:flex;gap:10px;align-items:flex-start;padding:7px 4px;cursor:pointer;font-family:"Noto Sans TC";font-size:14px;line-height:1.55;color:#f3dcdb}
+.obj .bx{width:15px;height:15px;border:1px solid var(--red);flex:none;margin-top:3px;position:relative}
+.obj.done{color:#6d5454;text-decoration:line-through}
+.obj.done .bx{background:var(--red)}
+.obj.done .bx:after{content:"✓";color:#000;position:absolute;font-size:12px;left:2px;top:-2px;font-weight:700}
+.t{color:var(--yl);font-family:Rajdhani;font-weight:700;min-width:96px;flex:none}
+.unv{color:#000;background:var(--yl);font-size:11px;padding:0 5px;margin-left:4px;font-weight:700;white-space:nowrap}
+.cost{display:flex;justify-content:space-between;font-family:"Noto Sans TC";font-size:14px;padding:5px 0;border-bottom:1px dashed #3a1b1a;color:#f3dcdb}
+.cost b{color:var(--yl);font-family:Rajdhani;font-size:16px}
+.cost b:before{content:"€$ ";color:var(--cy);font-size:12px}
+table{width:100%;border-collapse:collapse;font-family:"Noto Sans TC";font-size:13px}
+td{border:1px solid #3a1b1a;padding:6px 8px;color:#f3dcdb;vertical-align:top}
+td:first-child{color:var(--cy);white-space:nowrap;width:7em}
+.btn{margin-top:22px;display:inline-block;padding:10px 28px;background:transparent;border:1px solid var(--yl);color:var(--yl);font:700 15px Rajdhani;letter-spacing:3px;cursor:pointer;clip-path:polygon(10px 0,100% 0,100% 70%,calc(100% - 10px) 100%,0 100%,0 30%)}
+.btn.on{background:var(--yl);color:#000}
+.prog{height:4px;background:#2a1212;margin:6px 0 2px}.prog i{display:block;height:100%;background:var(--red);transition:.3s}
+a{color:var(--cy)}
+footer{padding:0 32px 30px;font-size:12px;color:var(--dim);letter-spacing:1px;font-family:"Noto Sans TC"}
+@media(max-width:820px){header{flex-wrap:wrap;padding:16px}.tabs{order:3;width:100%}.meta{margin-left:0;text-align:left}main{grid-template-columns:1fr;padding:14px}.panel{padding:20px 16px}h1{font-size:22px}.t{min-width:70px}td:first-child{white-space:nowrap;width:6em}footer{padding:0 14px 24px}}
+
+.tabs span,.tabs b{cursor:pointer;border-bottom:2px solid transparent;color:var(--dim)}
+.tabs .act{color:var(--red);border-bottom:2px solid var(--red)}
+.view{display:none}.view.act{display:block}main.view.act{display:grid}
+.wrap{padding:24px 32px;max-width:1400px;margin:0 auto}
+.mapg{display:grid;grid-template-columns:1fr 360px;gap:22px}
+.mbox{border:1px solid rgba(255,92,87,.4);background:rgba(20,8,10,.6);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));padding:12px;position:relative}
+.mbox svg{width:100%;height:auto;display:block}#mapsvg svg{max-height:calc(100vh - 170px);min-height:420px}
+.mk{cursor:pointer}.mk:hover circle{stroke-width:3}
+.card{min-height:160px}.card h2{font-family:"Noto Sans TC";color:var(--red);margin:6px 0;font-size:22px}
+.card p{font-family:"Noto Sans TC";font-size:13px;line-height:1.7;margin:6px 0}
+.nav{display:inline-block;margin-top:10px;padding:8px 18px;background:var(--cy);color:#000;font-weight:700;letter-spacing:2px;text-decoration:none;clip-path:polygon(0 0,100% 0,100% 70%,90% 100%,0 100%)}
+.lg{font-size:12px;letter-spacing:1px;line-height:2}.lg i{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:middle;border-radius:50%}
+.lg u{display:inline-block;width:26px;height:0;border-top:2px solid;margin-right:8px;vertical-align:middle;text-decoration:none}
+.ftab{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px}.ftab span{border:1px solid rgba(255,92,87,.5);padding:4px 12px;cursor:pointer;font-size:13px;letter-spacing:1px}
+.ftab .act{background:var(--red);color:#000}
+.cap{display:flex;align-items:center;gap:14px;font-weight:700;letter-spacing:2px;color:var(--cy)}.cap .prog{flex:1;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.it{position:relative;border:1px solid var(--rc);background:linear-gradient(160deg,color-mix(in srgb,var(--rc) 18%,transparent),rgba(0,0,0,.5));padding:12px 10px 10px;cursor:pointer;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);min-height:118px}
+.it .em{font-size:30px;display:block;text-align:center;margin:4px 0 8px}
+.it .nm{font-family:"Noto Sans TC";font-size:13px;color:#eee;text-align:center;line-height:1.4}
+.it .rr{position:absolute;left:0;bottom:0;right:0;height:3px;background:var(--rc)}
+.it .eq{position:absolute;top:6px;left:8px;font-size:10px;letter-spacing:1px;color:var(--dim)}
+.it.on{box-shadow:inset 0 0 0 2px var(--rc)}.it.on .eq{color:var(--rc)}
+.it .nt{font-family:"Noto Sans TC";font-size:11px;color:var(--dim);text-align:center;margin-top:4px}
+.key{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.ki{border:1px solid var(--yl);padding:10px 14px;background:rgba(252,238,10,.05)}.ki small{color:var(--yl);letter-spacing:2px;font-size:11px}.ki div{font-family:"Noto Sans TC";font-size:14px;margin-top:4px;word-break:break-all}
+.rlg{font-size:12px;letter-spacing:1px;color:var(--dim);margin:8px 0}.rlg b{margin-right:14px}
+@media(max-width:820px){.wrap{padding:14px}.mapg{grid-template-columns:1fr}.grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr))}.it .em{font-size:24px}}
+</style></head><body>
+<header><div class="logo glitch" data-t="JOURNAL">JOURNAL</div>
+<div class="tabs"><span data-v="map">MAP</span><span data-v="journal" class="act">JOURNAL</span><span data-v="inv">INVENTORY</span></div>
+<div class="meta">KAOHSIUNG // 2026.10.31–11.01<br>ROAD TRIP // 台北 → 高雄</div></header>
+<section class="view" id="v-map"><div class="wrap"><div class="sec">ROUTE // 台北 → 嘉義 → 高雄 → 台南 → 台北（示意，非實際比例）</div><div class="mapg"><div class="mbox" id="mapsvg"></div><div><div class="mbox card" id="mcard"></div><div class="mbox" style="margin-top:16px" id="inset"></div><div class="mbox lg" style="margin-top:16px"><div class="sec" style="margin-top:0">LEGEND</div><div><i style="background:var(--red)"></i>MAIN JOB</div><div><i style="background:var(--cy)"></i>SIDE JOB</div><div><i style="background:var(--yl)"></i>GIG / 出發點</div><div><u style="border-color:var(--cy)"></u>DAY 1 · 10/31</div><div><u style="border-color:var(--yl);border-top-style:dashed"></u>DAY 2 · 11/1</div><div><u style="border-color:var(--red);border-top-style:dotted"></u>步行</div></div></div></div></div></section>
+<main class="view act" id="v-journal"><nav class="list" id="list"></nav><section class="panel" id="panel"></section></main>
+<section class="view" id="v-inv"><div class="wrap"><div class="sec">INVENTORY // LOADOUT 202610</div><div class="cap"><span id="capn"></span><div class="prog"><i id="capb"></i></div></div><div class="rlg"><b style="color:var(--yl)">■ LEGENDARY 必帶</b><b style="color:#c77dff">■ EPIC 電子</b><b style="color:var(--cy)">■ RARE</b><b style="color:#9aa">■ COMMON</b></div><div class="ftab" id="ftab"></div><div class="grid" id="grid"></div><div class="sec">KEY ITEMS // 文件與訂位</div><div class="key" id="key"></div></div></section>
+<footer>SOURCES: <a href="https://kpmc.com.tw/program/2026-harbour-beats/">高流官方活動頁</a>、街聲演出頁、工商時報。時間皆為台北時間 (UTC+8)。<span class="unv">未查證</span> = 尚未查證。Fan-made, inspired styling only.</footer>
+<script>
+const U='<span class="unv">未查證</span>';
+const Q=[
+{id:'main',cat:'MAIN JOB',t:'漢堡好港節',en:'HARBOUR BEATS',loc:'鹽埕 / 高流 珊瑚礁群',lv:'10/31–11/1',
+d:'2026 漢堡好港節 Harbour Beats。每天 15:00–21:00，免費入場，場地禁菸。音樂每天 16:40 開始，各組出場時段未公布。',
+objs:[['10/31 16:20','從翰品走到高流珊瑚礁群（沿水岸約 25 分，或駁二大義站搭輕軌 1 站）'],['10/31 16:40','音樂：雷擎、Sophia Kennedy、Majin、BOVIY（各組時段未公布）'],['10/31 17:30','現場晚餐：德國豬腳、香腸堡、各式漢堡；Emma 床墊聽床邊故事'],['10/31 19:00','大港橋夜間旋轉（約 3–5 分，大義倉庫那頭橋頭看）'],['10/31 19:30','A Wall is a Screen 戶外短片漫步，21:00 結束，走回飯店約 20 分'],['選配 11/1 16:40','週日場：呂允、Sophia Kennedy、Majin、BOVIY、椅子樂團（最快 17:30 後離開）']],
+table:[['堡正好睡','Emma 床墊＋Chill DJ＋床邊故事：黃百合老師台語說故事、佳伶老師繪本（11/1《貓房子》）、台灣最好睡的 Podcast。場次未公布'],['堡正有影','A Wall is a Screen 短片漫步，海豚 02 館下方出發。場次未公布'],['水上手球','3 人一隊，愛河灣水樂園，報名 10/29 已截止'],['微醺繪畫','16:00–19:30，NT$1,300／人，大人活動'],['台灣漢堡攤','斑迪 肉肉山漢堡、Foodturama 德式豬腳小圓堡、炸魚小鎮 海陸堡、burger bomb 藍莓乳酪牛肉堡、布村早茶 黑麥啤酒起司醬牛肉堡、米思粿 蘿蔔粿漢堡、小蜜蜂 炒麵潛艇堡、港媳好味道 油蔥雞菠蘿堡、享吃鹽水雞沙威瑪等'],['甜點／飲料','Kaju 冰心泡芙、午後咬一口 餅乾冰淇淋漢堡、怪獸鈴噹 銅鑼堡、Ru迷 芒果百香泡泡、小吉 奶蓋可樂'],['德國攤','巴獅子 Der Löwe（香腸麵包、咖哩香腸）、德藝小築、屋寶（豬腳）；啤酒 Feldschlößchen、Warsteiner；葡萄酒 MARING-PRIGGE'],['花時間花藝','聖誕花圈手作；追蹤＋拍照＋Tag＋限動送諾貝松小花飾'],['拍照牆優惠','鯨魚堤岸拍照牆照片可到大立、漢神、樂購兌換優惠；SKM Park 摩天輪免費一次（10/31–11/30）；高流會員到日航 RB22 換一杯德國啤酒']],
+costs:[['入場','免費']],note:'未公布：各組出場時段、集章或抽獎、停車與交通管制、雨天備案 '+U},
+{id:'npm',cat:'SIDE JOBS',t:'故宮南院',en:'SOUTHERN PALACE',loc:'嘉義 太保',lv:'10/31',
+d:'北上南下途中的第一站。週六 09:00–18:00 開放，館內兒童創意中心免費，園區有湖可散步，北側有兒童遊憩區。',
+objs:[['08:00','從台北出發，國一南下，嘉義交流道下（約 2 小時 45 分，估計）'],['10:45–13:30','逛故宮南院；午餐在園區或附近'],['13:30','開往高雄（約 1 小時 45 分，估計）']],costs:[['停車','NT$60']]},
+{id:'chimei',cat:'SIDE JOBS',t:'奇美博物館',en:'CHIMEI MUSEUM',loc:'台南 仁德',lv:'11/1',
+d:'回程停留點。週日 09:30–17:30，常設展最後入場 17:00。館內有動物標本跟兵器展；戶外園區 09:00–18:30 免費；有 Tesla 超充。',
+objs:[['12:00','從高雄出發（到台南仁德約 45 分，估計）'],['12:45–17:00','奇美博物館'],['17:30','台南晚餐，等北上車潮'],['19:00','開回台北（約 3 小時 30 分，估計，22:30 左右到家）']],costs:[['門票（全票 / 7–22 歲）','NT$200 / NT$150']]},
+{id:'hotel',cat:'SIDE JOBS',t:'入住翰品酒店高雄',en:'CHECK-IN',loc:'鹽埕',lv:'10/31–11/1',
+d:'Room Only（不含早餐）。',
+objs:[['15:15','抵達，車停對面市立室內停車場（住客免費），櫃台領停車卡'],['16:00','check-in（確認信寫 16:00）'],['入住時','問櫃台 Tesla 充電 '+U],['11/1 11:30','退房、取車（12:00 前退房）']],
+table:[['7F VIP Lounge','07:00–22:00，傍晚 Happy Hour（時段 '+U+'）'],['健身房','有（樓層、時段 '+U+'）'],['洗衣','10F 免費自助洗衣'],['泳池',U],['兒童遊戲區','沒查到 '+U],['一次性備品','不主動提供，1F 櫃台每組 NT$30']],
+costs:[]},
+{id:'hallo',cat:'SIDE JOBS',t:'萬聖節夜燈 DIY',en:'HALLOWEEN',loc:'翰品 7F VIP',lv:'10/31',
+d:'翰品酒店高雄 10/31 萬聖節夜燈手作，住客免費。確切時段'+U+'，入住時問櫃台；跟音樂衝突就以 16:40 開唱為優先。',
+objs:[['16:00','入住時問夜燈 DIY 時段'],['10/31','參加萬聖夜燈手作'],['10/31–11/1','港都茶樓女巫送糖；用餐打卡送手指餅乾（每桌 1 份）'],['10/31','品日料雙人用餐送萬聖甜點']],costs:[['夜燈 DIY','免費（住客）']]},
+{id:'pack',cat:'GIGS',t:'打包裝備',en:'LOADOUT',loc:'出發點',lv:'10/31 前',
+d:'飯店不主動提供一次性備品。',objs:[['必帶','牙膏、牙刷（櫃台每組 NT$30）'],['必帶','換洗衣物、防曬用品、太陽眼鏡'],['必帶','藥品、防蚊液、毛巾、拖鞋'],['必帶','相機、充電器、電動車充電線／轉接頭'],['視情況','泳具（泳池 '+U+'）']],costs:[]},
+{id:'bf',cat:'GIGS',t:'早餐不含',en:'BREAKFAST',loc:'鹽埕',lv:'11/1 07:30',
+d:'訂房是 Room Only，不含早餐。',objs:[['選項 A','飯店 3F 港都茶樓 06:30–10:00，現場加購大人 650+10%、兒童 325+10% '+U],['選項 B','大溝頂虱目魚米粉湯（05:30–13:30，賣完就收）'],['選項 C','姊妹老五烘蛋漢堡（06:00 開）'],['09:00','逛駁二（市博會、鋼雕藝術節；市集時間 '+U+'）'],['10:30','米糕城早午餐（大仁路）']],costs:[['飯店早餐若加購 '+U,'約 NT$1,788']]},
+{id:'pool',cat:'GIGS',t:'打電話問泳池',en:'CALL HOTEL',loc:'翰品酒店高雄',lv:'出發前',
+d:'觀光署列有泳池，但官網和訂房網都沒提到。泳池開放時間與泳帽規定都不清楚。',objs:[['出發前','打給飯店問有沒有泳池、時段、泳帽規定'],['順便','問 Tesla 充電、夜燈 DIY 時段、健身房樓層']],costs:[]},
+{id:'budget',cat:'GIGS',t:'預算',en:'EDDIES',loc:'ALL',lv:'TOTAL',
+d:'已知花費；餐飲、充電與其他尚未估。實際花費待填。',objs:[],costs:[['故宮南院停車','NT$60'],['奇美博物館門票（全票 200、7–22 歲 150）','依人數'],['飯店早餐（若加購）'+U,'約 NT$1,788'],['餐飲、充電、其他','待填']]}];
+const S=JSON.parse(localStorage.getItem('khq_pub')||'{}');let cur=S._cur||'main';
+const save=()=>localStorage.setItem('khq_pub',JSON.stringify(S));
+function list(){let h='',c='';for(const q of Q){if(q.cat!=c){c=q.cat;h+=`<h3>${c}</h3>`}h+=`<div class="q ${q.id==cur?'on':''} ${S._trk==q.id?'trk':''}" onclick="sel('${q.id}')"><span class="ic"></span>${q.t}<small>${q.lv}</small></div>`}list_.innerHTML=h}
+function panel(){const q=Q.find(x=>x.id==cur);const n=q.objs.length,d=q.objs.filter((o,i)=>S[q.id+i]).length;
+let h=`<span class="tag">${q.cat}</span><span class="tag y">DISTRICT: ${q.loc}</span><h1><span class="glitch" data-t="${q.t}">${q.t}</span></h1><div class="sub">${q.en} // ${q.lv}</div><p class="desc">${q.d}</p>`;
+if(n)h+=`<div class="sec">OBJECTIVES ${d}/${n}</div><div class="prog"><i style="width:${d/n*100}%"></i></div>`+q.objs.map((o,i)=>`<div class="obj ${S[q.id+i]?'done':''}" onclick="tg('${q.id}',${i})"><span class="bx"></span><span class="t">${o[0]}</span><span>${o[1]}</span></div>`).join('');
+if(q.table)h+=`<div class="sec">INTEL</div><table>${q.table.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</table>`;
+if(q.costs.length)h+=`<div class="sec">REWARD / COST</div>`+q.costs.map(c=>`<div class="cost"><span>${c[0]}</span><b>${c[1]}</b></div>`).join('');
+if(q.note)h+=`<p class="desc" style="margin-top:14px">${q.note}</p>`;
+h+=`<button class="btn ${S._trk==q.id?'on':''}" onclick="trk('${q.id}')">${S._trk==q.id?'TRACKING':'TRACK'}</button>`;panel_.innerHTML=h}
+const list_=document.getElementById('list'),panel_=document.getElementById('panel');
+function sel(id){cur=S._cur=id;save();list();panel();if(innerWidth<820)panel_.scrollIntoView({behavior:'smooth'})}
+function tg(id,i){S[id+i]=!S[id+i];save();panel()}
+function trk(id){S._trk=S._trk==id?null:id;save();list();panel()}
+list();panel();
+/* ---- views ---- */
+const tabs=document.querySelectorAll('.tabs [data-v]');
+function view(v){tabs.forEach(t=>t.classList.toggle('act',t.dataset.v==v));['map','journal','inv'].forEach(k=>document.getElementById('v-'+k).classList.toggle('act',k==v));S._v=v;save();scrollTo(0,0)}
+tabs.forEach(t=>t.onclick=()=>view(t.dataset.v));
+/* ---- map ---- */
+const G='https://www.google.com/maps/dir/?api=1&destination=';
+const P=[
+{id:'home',ty:'gig',x:470,y:74,n:'台北（出發點）',en:'START',q:'台北車站',tm:'10/31 08:00 出發；11/1 約 22:30 回到台北',tr:'國一南下，嘉義交流道下到故宮南院約 2 小時 45 分（估計）；回程台南 → 台北約 3 小時 30 分（估計）'},
+{id:'npm',ty:'side',x:150,y:440,n:'故宮南院（嘉義太保）',en:'SOUTHERN PALACE',q:'國立故宮博物院南部院區',tm:'10/31 10:45–13:30（週六 09:00–18:00）',tr:'到高雄約 1 小時 45 分（估計）；停車 NT$60'},
+{id:'chimei',ty:'side',x:118,y:572,n:'奇美博物館（台南仁德）',en:'CHIMEI MUSEUM',q:'奇美博物館',tm:'11/1 12:45–17:00（週日 09:30–17:30，最後入場 17:00）',tr:'高雄 → 仁德約 45 分（估計）；17:30 台南晚餐，19:00 開回台北'},
+{id:'hotel',ty:'side',x:150,y:648,n:'翰品酒店高雄',en:'SAFEHOUSE',q:'翰品酒店高雄',tm:'10/31 15:15 抵達、16:00 check-in；11/1 11:30 退房（12:00 前）',tr:'走到高流珊瑚礁群沿水岸約 25 分，或駁二大義站搭輕軌 1 站；回程走回約 20 分'},
+{id:'kpmc',ty:'main',x:178,y:668,n:'高流 珊瑚礁群（漢堡好港節）',en:'HARBOUR BEATS',q:'高雄流行音樂中心',tm:'10/31–11/1 每天 15:00–21:00，音樂 16:40 開始',tr:'從翰品沿水岸步行約 25 分；21:00 結束走回飯店約 20 分'},
+];
+const col={main:'var(--red)',side:'var(--cy)',gig:'var(--yl)'};
+const pt=id=>P.find(p=>p.id==id);
+function line(a,b,c,dash,w){const A=pt(a),B=pt(b);return `<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="${c}" stroke-width="${w||2.5}" ${dash?`stroke-dasharray="${dash}"`:''} style="filter:drop-shadow(0 0 4px ${c})"/>`}
+function drawMap(){
+let g='';for(let i=0;i<=600;i+=40)g+=`<line x1="${i}" y1="0" x2="${i}" y2="720" stroke="rgba(94,246,255,.06)"/>`;for(let i=0;i<=720;i+=40)g+=`<line x1="0" y1="${i}" x2="600" y2="${i}" stroke="rgba(94,246,255,.06)"/>`;
+/* rough Taiwan west-coast silhouette (stylized) */
+const coast='M455,40 L520,55 L560,110 L540,200 L470,330 L420,470 L330,620 L265,700 L200,712 L140,680 L100,610 L95,520 L120,430 L170,330 L240,230 L320,140 L390,80 Z';
+let m=`<svg viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg">${g}<path d="${coast}" fill="rgba(255,92,87,.05)" stroke="rgba(255,92,87,.35)" stroke-width="1.5"/>`;
+m+=`<text x="20" y="30" fill="var(--dim)" font-size="12" letter-spacing="2">TAIWAN // WEST CORRIDOR</text><text x="20" y="700" fill="var(--dim)" font-size="11">N ↑ 示意圖</text>`;
+m+=line('home','npm','#5EF6FF')+line('npm','hotel','#5EF6FF')+`<path d="M150,648 L118,572 L470,74" fill="none" stroke="#FCEE0A" stroke-width="2.5" stroke-dasharray="9 6" transform="translate(10,0)" style="filter:drop-shadow(0 0 4px #FCEE0A)"/>`+line('hotel','kpmc','#FF5C57','2 4',2);
+m+=`<text x="300" y="260" fill="#5EF6FF" font-size="13" letter-spacing="2">DAY 1</text><text x="345" y="340" fill="#FCEE0A" font-size="13" letter-spacing="2">DAY 2</text>`;
+for(const p of P){const c=getComputedStyle(document.body).getPropertyValue(p.ty=='main'?'--red':p.ty=='side'?'--cy':'--yl')||'#fff';
+m+=`<g class="mk" onclick="mk('${p.id}')"><circle cx="${p.x}" cy="${p.y}" r="16" fill="transparent"/><circle cx="${p.x}" cy="${p.y}" r="7" fill="#0b0b0d" stroke="${c}" stroke-width="2.5"><animate attributeName="r" values="7;9;7" dur="2s" repeatCount="indefinite"/></circle><circle cx="${p.x}" cy="${p.y}" r="2.5" fill="${c}"/>`+
+`<text x="${p.x+(p.x>300?-14:16)}" y="${p.y+(p.id=='kpmc'?18:p.id=='hotel'?-8:4)}" text-anchor="${p.x>300?'end':'start'}" fill="${c}" font-size="14" font-family="Noto Sans TC" font-weight="700">${p.n.split('（')[0]}</text></g>`}
+document.getElementById('mapsvg').innerHTML=m+'</svg>';
+/* inset */
+document.getElementById('inset').innerHTML=`<div class="sec" style="margin-top:0">INSET // 鹽埕 – 駁二 – 高流（步行，示意）</div><svg viewBox="0 0 320 170"><path d="M10,150 Q120,140 180,110 T310,40" fill="none" stroke="rgba(94,246,255,.35)" stroke-width="10"/><text x="230" y="40" fill="var(--dim)" font-size="10">水岸 / 高雄港</text>
+<path d="M50,60 L120,95 L200,120 L265,95" fill="none" stroke="#FF5C57" stroke-width="2.5" stroke-dasharray="3 5"/>
+<g class="mk" onclick="mk('hotel')"><rect x="40" y="50" width="20" height="20" fill="#0b0b0d" stroke="#5EF6FF" stroke-width="2"/><text x="40" y="42" fill="#5EF6FF" font-size="12" font-family="Noto Sans TC">翰品酒店高雄</text></g>
+<circle cx="120" cy="95" r="5" fill="#FCEE0A"/><text x="92" y="122" fill="#FCEE0A" font-size="11" font-family="Noto Sans TC">駁二大義站（輕軌 1 站）</text>
+<g class="mk" onclick="mk('kpmc')"><circle cx="265" cy="95" r="9" fill="#0b0b0d" stroke="#FF5C57" stroke-width="2.5"/><text x="214" y="75" fill="#FF5C57" font-size="12" font-family="Noto Sans TC">高流 珊瑚礁群</text></g>
+<text x="150" y="160" fill="#FF5C57" font-size="11" font-family="Noto Sans TC">去程約 25 分 ／ 回程約 20 分</text></svg>`}
+function mk(id){const p=pt(id);S._mk=id;save();document.getElementById('mcard').innerHTML=`<span class="tag ${p.ty=='main'?'':p.ty=='gig'?'y':''}">${p.ty=='main'?'MAIN JOB':p.ty=='side'?'SIDE JOB':'GIG'}</span><div class="sub" style="margin-top:8px">${p.en}</div><h2>${p.n}</h2><p><b style="color:var(--yl)">TIME</b>　${p.tm}</p><p><b style="color:var(--cy)">ROUTE</b>　${p.tr}</p><a class="nav" target="_blank" rel="noopener" href="${G+encodeURIComponent(p.q)}">NAVIGATE ▸</a>`}
+/* ---- inventory ---- */
+const R={L:'#FCEE0A',E:'#c77dff',R:'#5EF6FF',C:'#9aa4a8'};
+const I=[
+['太陽眼鏡','🕶️','服裝','L'],['拖鞋','🩴','服裝','C'],['換洗衣物','👕','服裝','L'],['泳具','🩱','服裝','C','泳池'+U],
+['防曬用品','🧴','盥洗','L'],['毛巾','🧺','盥洗','C'],['牙膏、牙刷','🪥','盥洗','L','櫃台每組 NT$30'],['洗面乳','🫧','盥洗','C'],['刮鬍刀','🪒','盥洗','C'],
+['藥品','💊','醫療','R'],['防蚊液','🦟','醫療','R'],
+['咖啡用具','☕','食物','R'],['烈酒','🥃','食物','R'],['歐洲酒品','🍷','食物','R'],['調味料','🧂','食物','C'],['紙巾','🧻','食物','C'],['多餘食材','🥬','食物','C'],['零食','🍪','食物','C'],
+['SWITCH','🎮','電子','E'],['相機','📷','電子','E'],['筆電','💻','電子','E'],['電子書','📖','電子','E'],['充電器','🔌','電子','E'],['小音箱','🔊','電子','E'],['電動車充電線／轉接頭','⚡','電子','L']];
+const CAT=['ALL','服裝','盥洗','醫療','食物','電子'];let fc='ALL';
+const K=[['HOTEL','翰品酒店高雄 · Room Only'],['CHECK-IN / OUT','10/31 16:00 ／ 11/1 12:00'],['PARKING','對面市立室內停車場 · 住客免費'],['奇美門票','全票 NT$200 · 7–22 歲 NT$150（現場）'],['好港節','免費入場 · 10/31–11/1 15:00–21:00']];
+function inv(){document.getElementById('ftab').innerHTML=CAT.map(c=>`<span class="${c==fc?'act':''}" onclick="fc='${c}';inv()">${c}</span>`).join('');
+document.getElementById('grid').innerHTML=I.map((it,i)=>it[2]==fc||fc=='ALL'?`<div class="it ${S['inv'+i]?'on':''}" style="--rc:${R[it[3]]}" onclick="S['inv'+${i}]=!S['inv'+${i}];save();inv()"><span class="eq">${S['inv'+i]?'■ EQUIPPED':'□ EQUIP'}</span><span class="em">${it[1]}</span><div class="nm">${it[0]}</div>${it[4]?`<div class="nt">${it[4]}</div>`:''}<span class="rr"></span></div>`:'').join('');
+const n=I.filter((x,i)=>S['inv'+i]).length;document.getElementById('capn').textContent=`CAPACITY ${n} / ${I.length}`;document.getElementById('capb').style.width=n/I.length*100+'%';
+document.getElementById('key').innerHTML=K.map(k=>`<div class="ki"><small>◆ ${k[0]}</small><div>${k[1]}</div></div>`).join('')}
+drawMap();mk(S._mk||'kpmc');inv();if(S._v&&S._v!='journal')view(S._v);
+const hv=location.hash.slice(1);if(['map','journal','inv'].includes(hv))view(hv);
+
+</script></body></html>
