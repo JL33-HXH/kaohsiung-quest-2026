@@ -89,7 +89,7 @@ footer{padding:0 32px 30px;font-size:12px;color:var(--dim);letter-spacing:1px;fo
 <header><div class="logo glitch" data-t="JOURNAL">JOURNAL</div>
 <div class="tabs"><span data-v="map">MAP</span><span data-v="journal" class="act">JOURNAL</span><span data-v="inv">INVENTORY</span></div>
 <div class="meta">KAOHSIUNG // 2026.10.31–11.01<br>ROAD TRIP // 台北 → 高雄</div></header>
-<section class="view" id="v-map"><div class="wrap"><div class="sec">ROUTE // 台北 → 嘉義 → 高雄 → 台南 → 台北（示意，非實際比例）</div><div class="mapg"><div class="mbox" id="mapsvg"></div><div><div class="mbox card" id="mcard"></div><div class="mbox" style="margin-top:16px" id="inset"></div><div class="mbox lg" style="margin-top:16px"><div class="sec" style="margin-top:0">LEGEND</div><div><i style="background:var(--red)"></i>MAIN JOB</div><div><i style="background:var(--cy)"></i>SIDE JOB</div><div><i style="background:var(--yl)"></i>GIG / 出發點</div><div><u style="border-color:var(--cy)"></u>DAY 1 · 10/31</div><div><u style="border-color:var(--yl);border-top-style:dashed"></u>DAY 2 · 11/1</div><div><u style="border-color:var(--red);border-top-style:dotted"></u>步行</div></div></div></div></div></section>
+<section class="view" id="v-map"><div class="wrap"><div class="sec">ROUTE // 台北 → 台中 → 高雄 → 台南（→ 嘉義 選配）→ 台北（示意，非實際比例）</div><div class="mapg"><div class="mbox" id="mapsvg"></div><div><div class="mbox card" id="mcard"></div><div class="mbox" style="margin-top:16px" id="inset"></div><div class="mbox lg" style="margin-top:16px"><div class="sec" style="margin-top:0">LEGEND</div><div><i style="background:var(--red)"></i>MAIN JOB</div><div><i style="background:var(--cy)"></i>SIDE JOB</div><div><i style="background:var(--yl)"></i>GIG / 出發點</div><div><u style="border-color:var(--cy)"></u>DAY 1 · 10/31</div><div><u style="border-color:var(--yl);border-top-style:dashed"></u>DAY 2 · 11/1</div><div><u style="border-color:var(--red);border-top-style:dotted"></u>步行</div></div></div></div></div></section>
 <main class="view act" id="v-journal"><nav class="list" id="list"></nav><section class="panel" id="panel"></section></main>
 <section class="view" id="v-inv"><div class="wrap"><div class="sec">INVENTORY // LOADOUT 202610</div><div class="cap"><span id="capn"></span><div class="prog"><i id="capb"></i></div></div><div class="rlg"><b style="color:var(--yl)">■ LEGENDARY 必帶</b><b style="color:#c77dff">■ EPIC 電子</b><b style="color:var(--cy)">■ RARE</b><b style="color:#9aa">■ COMMON</b></div><div class="ftab" id="ftab"></div><div class="grid" id="grid"></div><div class="sec">KEY ITEMS // 文件與訂位</div><div class="key" id="key"></div></div></section>
 <footer>SOURCES: <a href="https://kpmc.com.tw/program/2026-harbour-beats/">高流官方活動頁</a>、街聲演出頁、工商時報。時間皆為台北時間 (UTC+8)。<span class="unv">未查證</span> = 尚未查證。Fan-made, inspired styling only.</footer>
@@ -98,23 +98,26 @@ const U='<span class="unv">未查證</span>';
 const Q=[
 {id:'main',cat:'MAIN JOB',t:'漢堡好港節',en:'HARBOUR BEATS',loc:'鹽埕 / 高流 珊瑚礁群',lv:'10/31–11/1',
 d:'2026 漢堡好港節 Harbour Beats。每天 15:00–21:00，免費入場，場地禁菸。音樂每天 16:40 開始，各組出場時段未公布。',
-objs:[['10/31 16:20','從翰品走到高流珊瑚礁群（沿水岸約 25 分，或駁二大義站搭輕軌 1 站）'],['10/31 16:40','音樂：雷擎、Sophia Kennedy、Majin、BOVIY（各組時段未公布）'],['10/31 17:30','現場晚餐：德國豬腳、香腸堡、各式漢堡；Emma 床墊聽床邊故事'],['10/31 19:00','大港橋夜間旋轉（約 3–5 分，大義倉庫那頭橋頭看）'],['10/31 19:30','A Wall is a Screen 戶外短片漫步，21:00 結束，走回飯店約 20 分'],['選配 11/1 16:40','週日場：呂允、Sophia Kennedy、Majin、BOVIY、椅子樂團（最快 17:30 後離開）']],
+objs:[['10/31 17:05','從翰品走到高流珊瑚礁群（沿水岸約 25 分，或駁二大義站搭輕軌 1 站），約 17:30 到'],['10/31 16:40','音樂已開始，會錯過第一組（雷擎、Sophia Kennedy、Majin、BOVIY，各組時段未公布）；好港節到 21:00'],['10/31 17:30','現場晚餐：德國豬腳、香腸堡、各式漢堡；Emma 床墊聽床邊故事'],['10/31 19:00','大港橋夜間旋轉（約 3–5 分，大義倉庫那頭橋頭看）'],['10/31 19:30','A Wall is a Screen 戶外短片漫步，21:00 結束，走回飯店約 20 分'],['選配 11/1 16:40','週日場：呂允、Sophia Kennedy、Majin、BOVIY、椅子樂團（最快 17:30 後離開）']],
 table:[['堡正好睡','Emma 床墊＋Chill DJ＋床邊故事：黃百合老師台語說故事、佳伶老師繪本（11/1《貓房子》）、台灣最好睡的 Podcast。場次未公布'],['堡正有影','A Wall is a Screen 短片漫步，海豚 02 館下方出發。場次未公布'],['水上手球','3 人一隊，愛河灣水樂園，報名 10/29 已截止'],['微醺繪畫','16:00–19:30，NT$1,300／人，大人活動'],['台灣漢堡攤','斑迪 肉肉山漢堡、Foodturama 德式豬腳小圓堡、炸魚小鎮 海陸堡、burger bomb 藍莓乳酪牛肉堡、布村早茶 黑麥啤酒起司醬牛肉堡、米思粿 蘿蔔粿漢堡、小蜜蜂 炒麵潛艇堡、港媳好味道 油蔥雞菠蘿堡、享吃鹽水雞沙威瑪等'],['甜點／飲料','Kaju 冰心泡芙、午後咬一口 餅乾冰淇淋漢堡、怪獸鈴噹 銅鑼堡、Ru迷 芒果百香泡泡、小吉 奶蓋可樂'],['德國攤','巴獅子 Der Löwe（香腸麵包、咖哩香腸）、德藝小築、屋寶（豬腳）；啤酒 Feldschlößchen、Warsteiner；葡萄酒 MARING-PRIGGE'],['花時間花藝','聖誕花圈手作；追蹤＋拍照＋Tag＋限動送諾貝松小花飾'],['拍照牆優惠','鯨魚堤岸拍照牆照片可到大立、漢神、樂購兌換優惠；SKM Park 摩天輪免費一次（10/31–11/30）；高流會員到日航 RB22 換一杯德國啤酒']],
 costs:[['入場','免費']],note:'未公布：各組出場時段、集章或抽獎、停車與交通管制、雨天備案 '+U},
-{id:'npm',cat:'SIDE JOBS',t:'故宮南院',en:'SOUTHERN PALACE',loc:'嘉義 太保',lv:'10/31',
-d:'北上南下途中的第一站。週六 09:00–18:00 開放，館內兒童創意中心免費，園區有湖可散步，北側有兒童遊憩區。',
-objs:[['08:00','從台北出發，國一南下，嘉義交流道下（約 2 小時 45 分，估計）'],['10:45–13:30','逛故宮南院；午餐在園區或附近'],['13:30','開往高雄（約 1 小時 45 分，估計）']],costs:[['停車','NT$60']]},
+{id:'tc',cat:'SIDE JOBS',t:'台中午餐 PINOCOCO',en:'LUNCH STOP',loc:'台中 南屯',lv:'10/31 13:00',
+d:'PINOCOCO 皮諾可可 益豐路總店：台中市南屯區益豐路四段689號，04-2380-3357，有自己的停車場。當天早上用 <a href="https://inline.app/booking/-M0GQXqQdgH5pKcIix_z:inline-live-1?language=zh-tw" target="_blank" style="color:var(--cy)">inline 訂位</a>。車程皆為估計。',
+objs:[['上午','從台北出發開往台中南屯（週六約 2 小時 15–30 分，估計），約 12:45–13:00 到'],['當天早上','inline 訂位 PINOCOCO'],['13:00–14:30','午餐 PINOCOCO'],['備案','城裡城外 巫山烤魚 公益店（公益路二段653號之6，04-2382-4499，LINE @311vsssf）；烤魚要 30–40 分先預點，小孩點不辣豆豉'],['14:30','開往高雄（約 2 小時 15–30 分，估計），16:45–17:00 到翰品']],costs:[]},
+{id:'npm',cat:'SIDE JOBS',t:'故宮南院（選配）',en:'SOUTHERN PALACE // OPTIONAL',loc:'嘉義 太保',lv:'11/1 選配',
+d:'已從 Day 1 拿掉。可當 11/1 奇美之後的選配：週日 09:00–18:00，兒童創意中心免費。代價是奇美壓到約 2 小時、回家 21:00 以後、看不到週日好港節。',
+objs:[['11/1 奇美後','視體力決定要不要加故宮南院'],['停車','NT$60']],costs:[['停車','NT$60']]},
 {id:'chimei',cat:'SIDE JOBS',t:'奇美博物館',en:'CHIMEI MUSEUM',loc:'台南 仁德',lv:'11/1',
 d:'回程停留點。週日 09:30–17:30，常設展最後入場 17:00。館內有動物標本跟兵器展；戶外園區 09:00–18:30 免費；有 Tesla 超充。',
 objs:[['12:00','從高雄出發（到台南仁德約 45 分，估計）'],['12:45–17:00','奇美博物館'],['17:30','台南晚餐，等北上車潮'],['19:00','開回台北（約 3 小時 30 分，估計，22:30 左右到家）']],costs:[['門票（全票 / 7–22 歲）','NT$200 / NT$150']]},
 {id:'hotel',cat:'SIDE JOBS',t:'入住翰品酒店高雄',en:'CHECK-IN',loc:'鹽埕',lv:'10/31–11/1',
 d:'Room Only（不含早餐）。',
-objs:[['15:15','抵達，車停對面市立室內停車場（住客免費），櫃台領停車卡'],['16:00','check-in（確認信寫 16:00）'],['入住時','問櫃台 Tesla 充電 '+U],['11/1 11:30','退房、取車（12:00 前退房）']],
+objs:[['16:45–17:00','抵達，車停對面市立室內停車場（住客免費），櫃台領停車卡'],['17:00','check-in（確認信寫 16:00 起可入住）'],['入住時','問櫃台 Tesla 充電 '+U],['11/1 11:30','退房、取車（12:00 前退房）']],
 table:[['7F VIP Lounge','07:00–22:00，傍晚 Happy Hour（時段 '+U+'）'],['健身房','有（樓層、時段 '+U+'）'],['洗衣','10F 免費自助洗衣'],['泳池',U],['兒童遊戲區','沒查到 '+U],['一次性備品','不主動提供，1F 櫃台每組 NT$30']],
 costs:[]},
 {id:'hallo',cat:'SIDE JOBS',t:'萬聖節夜燈 DIY',en:'HALLOWEEN',loc:'翰品 7F VIP',lv:'10/31',
-d:'翰品酒店高雄 10/31 萬聖節夜燈手作，住客免費。確切時段'+U+'，入住時問櫃台；跟音樂衝突就以 16:40 開唱為優先。',
-objs:[['16:00','入住時問夜燈 DIY 時段'],['10/31','參加萬聖夜燈手作'],['10/31–11/1','港都茶樓女巫送糖；用餐打卡送手指餅乾（每桌 1 份）'],['10/31','品日料雙人用餐送萬聖甜點']],costs:[['夜燈 DIY','免費（住客）']]},
+d:'翰品酒店高雄 10/31 萬聖節夜燈手作，住客免費。確切時段未公布，17:00 才到可能趕不上；入住時問櫃台。',
+objs:[['17:00','入住時問夜燈 DIY 時段（可能已錯過）'],['10/31','參加萬聖夜燈手作'],['10/31–11/1','港都茶樓女巫送糖；用餐打卡送手指餅乾（每桌 1 份）'],['10/31','品日料雙人用餐送萬聖甜點']],costs:[['夜燈 DIY','免費（住客）']]},
 {id:'pack',cat:'GIGS',t:'打包裝備',en:'LOADOUT',loc:'出發點',lv:'10/31 前',
 d:'飯店不主動提供一次性備品。',objs:[['必帶','牙膏、牙刷（櫃台每組 NT$30）'],['必帶','換洗衣物、防曬用品、太陽眼鏡'],['必帶','藥品、防蚊液、毛巾、拖鞋'],['必帶','相機、筆電、電子書、充電器'],['必帶','洗面乳、刮鬍刀']],costs:[]},
 {id:'bf',cat:'GIGS',t:'早餐不含',en:'BREAKFAST',loc:'鹽埕',lv:'11/1 07:30',
@@ -124,7 +127,7 @@ d:'觀光署列有泳池，但官網和訂房網都沒提到。泳池開放時�
 {id:'cat',cat:'GIGS',t:'貓咪寄放',en:'CAT DROP-OFF',loc:'朋友家',lv:'10/31–11/1',
 d:'這趟貓咪不同行，寄放在朋友家。',objs:[['10/31 出門前','整理貓咪物品：貓砂、貓用碗、貓飼料、貓罐頭、貓玩具、貓背帶、外出籠'],['10/31 出門前','留給朋友：餵食份量與時間、貓砂清理方式'],['10/31 出門前','留給朋友：獸醫／急診聯絡資訊'],['10/31 早上','出發前送貓到朋友家'],['11/1 晚上','回到台北後接貓']],costs:[]},
 {id:'budget',cat:'GIGS',t:'預算',en:'EDDIES',loc:'ALL',lv:'TOTAL',
-d:'已知花費；餐飲、充電與其他尚未估。實際花費待填。',objs:[],costs:[['故宮南院停車','NT$60'],['奇美博物館門票（全票 200、7–22 歲 150）','依人數'],['飯店早餐（若加購）'+U,'約 NT$1,788'],['餐飲、充電、其他','待填']]}];
+d:'已知花費；餐飲、充電與其他尚未估。實際花費待填。',objs:[],costs:[['故宮南院停車（Day 2 選配才需要）','NT$60'],['奇美博物館門票（全票 200、7–22 歲 150）','依人數'],['飯店早餐（若加購）'+U,'約 NT$1,788'],['餐飲、充電、其他','待填']]}];
 const S=JSON.parse(localStorage.getItem('khq_pub')||'{}');let cur=S._cur||'main';
 const save=()=>localStorage.setItem('khq_pub',JSON.stringify(S));
 function list(){let h='',c='';for(const q of Q){if(q.cat!=c){c=q.cat;h+=`<h3>${c}</h3>`}h+=`<div class="q ${q.id==cur?'on':''} ${S._trk==q.id?'trk':''}" onclick="sel('${q.id}')"><span class="ic"></span>${q.t}<small>${q.lv}</small></div>`}list_.innerHTML=h}
@@ -147,11 +150,12 @@ tabs.forEach(t=>t.onclick=()=>view(t.dataset.v));
 /* ---- map ---- */
 const G='https://www.google.com/maps/dir/?api=1&destination=';
 const P=[
-{id:'home',ty:'gig',x:470,y:74,n:'台北（出發點）',en:'START',q:'台北車站',tm:'10/31 08:00 出發；11/1 約 22:30 回到台北',tr:'國一南下，嘉義交流道下到故宮南院約 2 小時 45 分（估計）；回程台南 → 台北約 3 小時 30 分（估計）'},
-{id:'npm',ty:'side',x:150,y:440,n:'故宮南院（嘉義太保）',en:'SOUTHERN PALACE',q:'國立故宮博物院南部院區',tm:'10/31 10:45–13:30（週六 09:00–18:00）',tr:'到高雄約 1 小時 45 分（估計）；停車 NT$60'},
+{id:'home',ty:'gig',x:470,y:74,n:'台北（出發點）',en:'START',q:'台北車站',tm:'10/31 上午 出發；11/1 約 22:30 回到台北',tr:'到台中南屯約 2 小時 15–30 分（估計）；回程台南 → 台北約 3 小時 30 分（估計）'},
+{id:'tc',ty:'side',x:300,y:250,n:'PINOCOCO 皮諾可可（台中南屯）',en:'LUNCH STOP',q:'PINOCOCO 皮諾可可 益豐路總店 台中市南屯區益豐路四段689號',tm:'10/31 13:00–14:30 午餐（約 12:45–13:00 到）',tr:'到高雄翰品約 2 小時 15–30 分（估計）；備案：城裡城外 巫山烤魚 公益店'},
+{id:'npm',ty:'side',x:150,y:440,n:'故宮南院（嘉義太保，選配）',en:'SOUTHERN PALACE // OPTIONAL',q:'國立故宮博物院南部院區',tm:'11/1 奇美後選配（週日 09:00–18:00）',tr:'代價：奇美壓到約 2 小時、回家 21:00 以後、看不到週日好港節；停車 NT$60'},
 {id:'chimei',ty:'side',x:118,y:572,n:'奇美博物館（台南仁德）',en:'CHIMEI MUSEUM',q:'奇美博物館',tm:'11/1 12:45–17:00（週日 09:30–17:30，最後入場 17:00）',tr:'高雄 → 仁德約 45 分（估計）；17:30 台南晚餐，19:00 開回台北'},
-{id:'hotel',ty:'side',x:150,y:648,n:'翰品酒店高雄',en:'SAFEHOUSE',q:'翰品酒店高雄',tm:'10/31 15:15 抵達、16:00 check-in；11/1 11:30 退房（12:00 前）',tr:'走到高流珊瑚礁群沿水岸約 25 分，或駁二大義站搭輕軌 1 站；回程走回約 20 分'},
-{id:'kpmc',ty:'main',x:178,y:668,n:'高流 珊瑚礁群（漢堡好港節）',en:'HARBOUR BEATS',q:'高雄流行音樂中心',tm:'10/31–11/1 每天 15:00–21:00，音樂 16:40 開始',tr:'從翰品沿水岸步行約 25 分；21:00 結束走回飯店約 20 分'},
+{id:'hotel',ty:'side',x:150,y:648,n:'翰品酒店高雄',en:'SAFEHOUSE',q:'翰品酒店高雄',tm:'10/31 16:45–17:00 抵達、17:00 check-in；11/1 11:30 退房（12:00 前）',tr:'走到高流珊瑚礁群沿水岸約 25 分，或駁二大義站搭輕軌 1 站；回程走回約 20 分'},
+{id:'kpmc',ty:'main',x:178,y:668,n:'高流 珊瑚礁群（漢堡好港節）',en:'HARBOUR BEATS',q:'高雄流行音樂中心',tm:'10/31 約 17:30 到（音樂 16:40 已開始）；每天 15:00–21:00',tr:'從翰品沿水岸步行約 25 分；21:00 結束走回飯店約 20 分'},
 ];
 const col={main:'var(--red)',side:'var(--cy)',gig:'var(--yl)'};
 const pt=id=>P.find(p=>p.id==id);
@@ -162,11 +166,11 @@ let g='';for(let i=0;i<=600;i+=40)g+=`<line x1="${i}" y1="0" x2="${i}" y2="720" 
 const coast='M455,40 L520,55 L560,110 L540,200 L470,330 L420,470 L330,620 L265,700 L200,712 L140,680 L100,610 L95,520 L120,430 L170,330 L240,230 L320,140 L390,80 Z';
 let m=`<svg viewBox="0 0 600 720" xmlns="http://www.w3.org/2000/svg">${g}<path d="${coast}" fill="rgba(255,92,87,.05)" stroke="rgba(255,92,87,.35)" stroke-width="1.5"/>`;
 m+=`<text x="20" y="30" fill="var(--dim)" font-size="12" letter-spacing="2">TAIWAN // WEST CORRIDOR</text><text x="20" y="700" fill="var(--dim)" font-size="11">N ↑ 示意圖</text>`;
-m+=line('home','npm','#5EF6FF')+line('npm','hotel','#5EF6FF')+`<path d="M150,648 L118,572 L470,74" fill="none" stroke="#FCEE0A" stroke-width="2.5" stroke-dasharray="9 6" transform="translate(10,0)" style="filter:drop-shadow(0 0 4px #FCEE0A)"/>`+line('hotel','kpmc','#FF5C57','2 4',2);
+m+=line('home','tc','#5EF6FF')+line('tc','hotel','#5EF6FF')+line('chimei','npm','#FCEE0A','2 6',1.5)+line('npm','home','#FCEE0A','2 6',1.5)+`<path d="M150,648 L118,572 L470,74" fill="none" stroke="#FCEE0A" stroke-width="2.5" stroke-dasharray="9 6" transform="translate(10,0)" style="filter:drop-shadow(0 0 4px #FCEE0A)"/>`+line('hotel','kpmc','#FF5C57','2 4',2);
 m+=`<text x="300" y="260" fill="#5EF6FF" font-size="13" letter-spacing="2">DAY 1</text><text x="345" y="340" fill="#FCEE0A" font-size="13" letter-spacing="2">DAY 2</text>`;
 for(const p of P){const c=getComputedStyle(document.body).getPropertyValue(p.ty=='main'?'--red':p.ty=='side'?'--cy':'--yl')||'#fff';
 m+=`<g class="mk" onclick="mk('${p.id}')"><circle cx="${p.x}" cy="${p.y}" r="16" fill="transparent"/><circle cx="${p.x}" cy="${p.y}" r="7" fill="#0b0b0d" stroke="${c}" stroke-width="2.5"><animate attributeName="r" values="7;9;7" dur="2s" repeatCount="indefinite"/></circle><circle cx="${p.x}" cy="${p.y}" r="2.5" fill="${c}"/>`+
-`<text x="${p.x+(p.x>300?-14:16)}" y="${p.y+(p.id=='kpmc'?18:p.id=='hotel'?-8:4)}" text-anchor="${p.x>300?'end':'start'}" fill="${c}" font-size="14" font-family="Noto Sans TC" font-weight="700">${p.n.split('（')[0]}</text></g>`}
+`<text x="${p.x+(p.x>300?-14:16)}" y="${p.y+(p.id=='kpmc'?18:p.id=='hotel'?-8:p.id=='npm'?18:4)}" text-anchor="${p.x>300?'end':'start'}" fill="${c}" font-size="14" font-family="Noto Sans TC" font-weight="700">${p.n.split('（')[0]}</text></g>`}
 document.getElementById('mapsvg').innerHTML=m+'</svg>';
 /* inset */
 document.getElementById('inset').innerHTML=`<div class="sec" style="margin-top:0">INSET // 鹽埕 – 駁二 – 高流（步行，示意）</div><svg viewBox="0 0 320 170"><path d="M10,150 Q120,140 180,110 T310,40" fill="none" stroke="rgba(94,246,255,.35)" stroke-width="10"/><text x="230" y="40" fill="var(--dim)" font-size="10">水岸 / 高雄港</text>
